@@ -30,9 +30,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .shell{position:relative;z-index:1;display:grid;grid-template-rows:52px 1fr;height:100vh;}
 .ws{display:grid;grid-template-columns:272px 1fr 286px;height:calc(100vh - 52px);overflow:hidden;}
 
-/* TOPBAR */
-.bar{display:flex;align-items:center;justify-content:space-between;padding:0 20px;
-  border-bottom:1px solid var(--b2);background:linear-gradient(90deg,rgba(0,212,255,0.04),transparent);}
+.bar{display:flex;align-items:center;justify-content:space-between;padding:0 20px;border-bottom:1px solid var(--b2);background:linear-gradient(90deg,rgba(0,212,255,0.04),transparent);}
 .brand{display:flex;align-items:center;gap:10px;}
 .bmark{width:30px;height:30px;border:1.5px solid var(--cy);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 0 18px rgba(0,212,255,0.2);position:relative;}
 .bmark::before{content:'';position:absolute;width:9px;height:9px;border-radius:50%;background:var(--cy);box-shadow:0 0 10px var(--cy);animation:cp 2s ease-in-out infinite;}
@@ -54,7 +52,6 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .cgr{border-color:rgba(0,255,136,.3);color:var(--gr);background:var(--grA);}
 .cam{border-color:rgba(255,184,0,.3);color:var(--am);background:var(--amA);}
 
-/* PANELS */
 .pnl{background:var(--bg1);display:flex;flex-direction:column;overflow:hidden;border-right:1px solid var(--b1);}
 .pnl.R{border-right:none;border-left:1px solid var(--b1);}
 .phd{padding:0 14px;height:38px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--b1);flex-shrink:0;}
@@ -65,19 +62,15 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .sl{font-size:9px;font-weight:600;letter-spacing:2.5px;color:var(--t2);text-transform:uppercase;margin-bottom:9px;display:flex;align-items:center;gap:7px;}
 .sl::after{content:'';flex:1;height:1px;background:var(--b1);}
 
-/* DROPZONE */
 .dz{position:relative;border:1px dashed var(--b3);border-radius:var(--r);padding:14px 12px;text-align:center;cursor:pointer;background:var(--bg2);transition:all .25s;}
 .dz:hover,.dz.drag{border-color:var(--cy);background:var(--cyA);}
 .dz input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
 .dzi{font-size:18px;margin-bottom:4px;}
 .dzm{font-size:12px;color:var(--t0);margin-bottom:2px;}.dzm strong{color:var(--cy);}
 .dzs{font-size:10px;color:var(--t2);}
-.dzf{display:none;margin-top:6px;font-family:var(--fm);font-size:10px;color:var(--gr);}
-.dzf.on{display:block;}
-.cbox{display:none;background:#020508;border:1px solid var(--b1);border-radius:var(--rs);padding:9px;font-family:var(--fm);font-size:10px;color:#4a9060;line-height:1.7;max-height:90px;overflow-y:auto;white-space:pre-wrap;word-break:break-all;margin-top:7px;}
-.cbox.on{display:block;}
+.dzf{display:none;margin-top:6px;font-family:var(--fm);font-size:10px;color:var(--gr);}.dzf.on{display:block;}
+.cbox{display:none;background:#020508;border:1px solid var(--b1);border-radius:var(--rs);padding:9px;font-family:var(--fm);font-size:10px;color:#4a9060;line-height:1.7;max-height:90px;overflow-y:auto;white-space:pre-wrap;word-break:break-all;margin-top:7px;}.cbox.on{display:block;}
 
-/* TABS */
 .tbar{display:flex;gap:4px;margin-bottom:10px;}
 .tab{flex:1;padding:7px 5px;border:1px solid var(--b2);border-radius:var(--rs);background:transparent;color:var(--t2);font-family:var(--ff);font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;}
 .tab:hover{border-color:var(--cy);color:var(--t1);}
@@ -87,7 +80,6 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .tbtn:hover{border-color:var(--cy);color:var(--t1);}
 .tbtn.on{border-color:var(--cy);color:var(--cy);background:var(--cyA);box-shadow:0 0 14px rgba(0,212,255,.15);}
 
-/* IMAGE PANEL */
 .idz{position:relative;border:1px dashed var(--b3);border-radius:var(--r);padding:14px 12px;text-align:center;cursor:pointer;background:var(--bg2);transition:all .25s;}
 .idz:hover{border-color:var(--vi);background:var(--viA);}
 .idz input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
@@ -98,17 +90,18 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
 .bpro:hover{background:rgba(155,109,255,.18);}
 .bpro:disabled{opacity:.3;cursor:not-allowed;}
 
-/* DRAW TOOLS */
+/* TOOL BUTTONS */
 .tool-row{display:flex;gap:5px;margin-bottom:8px;}
-.tool-btn{flex:1;padding:8px 4px;border:1px solid var(--b2);border-radius:var(--rs);background:var(--bg2);color:var(--t2);font-family:var(--ff);font-size:10px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center;}
-.tool-btn:hover{border-color:var(--cy);color:var(--t1);}
-.tool-btn.on{border-color:var(--cy);color:var(--cy);background:var(--cyA);}
-.tool-btn.erase.on{border-color:var(--rd);color:var(--rd);background:var(--rdA);}
-.tool-btn.setstart.on{border-color:var(--gr);color:var(--gr);background:var(--grA);}
-.sz-row{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.sz-label{font-size:10px;color:var(--t2);white-space:nowrap;}
+.tbtn2{flex:1;padding:8px 4px;border:1px solid var(--b2);border-radius:var(--rs);background:var(--bg2);color:var(--t2);font-family:var(--ff);font-size:10px;font-weight:700;cursor:pointer;transition:all .2s;text-align:center;}
+.tbtn2:hover{border-color:var(--cy);color:var(--t1);}
+.tbtn2.on{border-color:var(--cy);color:var(--cy);background:var(--cyA);}
+.tbtn2.er.on{border-color:var(--rd);color:var(--rd);background:var(--rdA);}
+.tbtn2.ss.on{border-color:var(--gr);color:var(--gr);background:var(--grA);}
+.sz-row{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.szlbl{font-size:10px;color:var(--t2);white-space:nowrap;}
+.hint-box{background:var(--bg3);border:1px solid var(--b1);border-radius:var(--rs);padding:8px;font-size:10px;color:var(--t2);line-height:1.6;}
+.hint-box strong{color:var(--t1);}
 
-/* PARAMS */
 .prm{margin-bottom:12px;}
 .pr{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:5px;}
 .pn{font-size:11px;font-weight:600;color:var(--t1);}
@@ -120,7 +113,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;heigh
 input[type=range].g::-webkit-slider-thumb{background:var(--gr);box-shadow:0 0 6px var(--gr);}
 input[type=range].a::-webkit-slider-thumb{background:var(--am);box-shadow:0 0 6px var(--am);}
 
-/* BUTTONS */
 .btns{display:flex;gap:6px;}
 .btn{flex:1;padding:9px 6px;border:1px solid;border-radius:var(--rs);font-family:var(--ff);font-size:11px;font-weight:700;cursor:pointer;transition:all .2s;}
 .brun{border-color:rgba(0,255,136,.4);color:var(--gr);background:var(--grA);}
@@ -135,19 +127,14 @@ input[type=range].a::-webkit-slider-thumb{background:var(--am);box-shadow:0 0 6p
 .pgbg{background:var(--bg3);border-radius:2px;height:4px;overflow:hidden;}
 .pgfl{height:100%;border-radius:2px;width:0%;transition:width .3s;background:linear-gradient(90deg,var(--cy),var(--gr));box-shadow:0 0 8px rgba(0,212,255,.3);}
 
-/* SENSOR */
 .sstrip{display:flex;gap:4px;margin-bottom:8px;}
 .sc{flex:1;padding:7px 3px;border:1px solid var(--b2);border-radius:var(--rs);text-align:center;font-family:var(--fm);font-size:8px;color:var(--t3);background:var(--bg2);transition:all .08s;line-height:1.4;}
 .sc.on{border-color:rgba(0,255,136,.5);color:var(--gr);background:var(--grA);box-shadow:0 0 8px rgba(0,255,136,.15);}
-
-/* METRICS */
 .mgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .mc{background:var(--bg2);border:1px solid var(--b1);border-radius:var(--r);padding:10px;}
 .mcl{font-size:8px;font-weight:600;letter-spacing:2px;color:var(--t2);margin-bottom:5px;text-transform:uppercase;}
 .mcv{font-family:var(--fm);font-size:18px;font-weight:700;color:var(--cy);line-height:1;}
 .mcv.g{color:var(--gr);}.mcv.a{color:var(--am);}.mcv.r{color:var(--rd);}
-
-/* MOTOR BARS */
 .mb{margin-bottom:10px;}
 .mbh{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;}
 .mbl{font-size:10px;font-weight:600;color:var(--t1);}
@@ -156,22 +143,18 @@ input[type=range].a::-webkit-slider-thumb{background:var(--am);box-shadow:0 0 6p
 .mbf{height:100%;border-radius:2px;width:0%;transition:width .07s;}
 .mfl{background:linear-gradient(90deg,var(--cy),rgba(0,212,255,.5));}
 .mfr{background:linear-gradient(90deg,var(--am),rgba(255,184,0,.5));}
-
-/* PID DIFF indicator */
 .pid-diff{display:flex;align-items:center;gap:6px;margin-bottom:10px;padding:8px 10px;background:var(--bg2);border:1px solid var(--b1);border-radius:var(--rs);}
 .pid-diff-label{font-size:9px;color:var(--t2);letter-spacing:1px;white-space:nowrap;}
-.pid-diff-bar-wrap{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;position:relative;}
-.pid-diff-bar{position:absolute;top:0;height:100%;border-radius:3px;transition:all .07s;}
-.pid-diff-val{font-family:var(--fm);font-size:10px;color:var(--am);min-width:36px;text-align:right;}
-
+.pid-diff-wrap{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden;position:relative;}
+.pid-diff-bar{position:absolute;top:0;height:100%;border-radius:3px;transition:all .07s;width:0%;}
+.pid-diff-val{font-family:var(--fm);font-size:10px;color:var(--am);min-width:38px;text-align:right;}
 #ecvs{display:block;width:100%;height:72px;background:var(--bg2);border:1px solid var(--b1);border-radius:var(--rs);}
 .lbox{background:var(--bg2);border:1px solid var(--b1);border-radius:var(--rs);padding:10px;font-family:var(--fm);font-size:10px;line-height:1.7;height:120px;overflow-y:auto;}
-.ll .ts{color:var(--t3);}
-.lok{color:var(--gr);}.lwn{color:var(--am);}.ler{color:var(--rd);}.lin{color:var(--t2);}.lac{color:var(--cy);}
+.ll .ts{color:var(--t3);}.lok{color:var(--gr);}.lwn{color:var(--am);}.ler{color:var(--rd);}.lin{color:var(--t2);}.lac{color:var(--cy);}
 
 /* SIM CENTER */
-.sima{display:flex;flex-direction:column;background:var(--bg0);overflow:hidden;position:relative;}
-.simbar{height:42px;padding:0 14px;border-bottom:1px solid var(--b1);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--bg1);}
+.sima{display:flex;flex-direction:column;background:#f0f0f0;overflow:hidden;position:relative;}
+.simbar{height:42px;padding:0 14px;border-bottom:1px solid var(--b1);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;background:var(--bg1);flex-shrink:0;}
 .stats{display:flex;gap:16px;}
 .st{display:flex;flex-direction:column;align-items:center;}
 .stl{font-family:var(--fm);font-size:8px;color:var(--t3);letter-spacing:1.5px;}
@@ -179,24 +162,24 @@ input[type=range].a::-webkit-slider-thumb{background:var(--am);box-shadow:0 0 6p
 .togs{display:flex;gap:10px;}
 .tl{display:flex;align-items:center;gap:5px;font-size:10px;color:var(--t2);cursor:pointer;}
 input[type=checkbox]{accent-color:var(--cy);cursor:pointer;}
-.cvw{flex:1;display:flex;align-items:center;justify-content:center;position:relative;padding:10px;}
-#cvs{display:block;border:1px solid var(--b2);border-radius:var(--r);box-shadow:0 0 60px rgba(0,0,0,.9);max-width:100%;max-height:100%;}
-.ovl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;transition:opacity .4s;}
-.ovl.gone{opacity:0;}
-.ovlt{font-family:var(--fb);font-size:28px;font-weight:800;color:var(--t0);letter-spacing:2px;margin-bottom:6px;}
+.cvw{flex:1;display:flex;align-items:center;justify-content:center;position:relative;padding:10px;background:var(--bg0);}
+
+/* THE CANVAS — white background, displayed with border */
+#cvs{display:block;border:2px solid var(--b3);border-radius:var(--r);box-shadow:0 0 40px rgba(0,0,0,.8);max-width:100%;max-height:100%;background:white;}
+#cvs.draw-mode{cursor:crosshair;}
+#cvs.erase-mode{cursor:cell;}
+#cvs.setstart-mode{cursor:pointer;}
+
+.ovl{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;transition:opacity .4s;background:rgba(0,0,0,0.5);}
+.ovl.gone{opacity:0;pointer-events:none;}
+.ovlt{font-family:var(--fb);font-size:28px;font-weight:800;color:var(--t0);letter-spacing:2px;margin-bottom:6px;text-shadow:0 2px 20px rgba(0,0,0,.8);}
 .ovlt em{font-style:normal;color:var(--cy);}
-.ovls{font-family:var(--fm);font-size:11px;color:var(--t2);letter-spacing:3px;}
+.ovls{font-family:var(--fm);font-size:11px;color:var(--t1);letter-spacing:3px;}
 #lapb{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(2,4,10,.96);border:1px solid rgba(0,255,136,.4);border-radius:var(--r);padding:20px 36px;text-align:center;box-shadow:0 0 40px rgba(0,255,136,.2);z-index:50;animation:pin .3s cubic-bezier(.34,1.56,.64,1);}
 @keyframes pin{from{transform:translate(-50%,-50%) scale(.8);opacity:0}}
 #lapb h2{font-family:var(--fb);font-size:18px;color:var(--gr);letter-spacing:2px;margin-bottom:6px;}
 #lapb p{font-family:var(--fm);font-size:11px;color:var(--t1);}
 
-/* DRAW MODE CURSOR HINT */
-#cvs.draw-mode{cursor:crosshair;}
-#cvs.erase-mode{cursor:cell;}
-#cvs.setstart-mode{cursor:pointer;}
-
-/* MODAL */
 .mbg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.82);backdrop-filter:blur(4px);z-index:999;align-items:center;justify-content:center;}
 .mbg.on{display:flex;}
 .mbox{background:var(--bg1);border:1px solid var(--b3);border-radius:var(--r);width:660px;max-height:82vh;display:flex;flex-direction:column;box-shadow:0 30px 80px rgba(0,0,0,.7);animation:su .25s ease;}
@@ -223,7 +206,7 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
   <div class="brand">
     <div class="bmark"><div class="borb"></div></div>
     <span class="bname">Robo<em>Trace</em></span>
-    <span class="btag">v6.0</span>
+    <span class="btag">v7.0</span>
   </div>
   <div class="pill" id="pill"><span class="pdot"></span><span id="ptxt">IDLE</span></div>
   <div class="chips">
@@ -236,12 +219,11 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
 
 <div class="ws">
 
-<!-- ════ LEFT PANEL ════ -->
+<!-- LEFT -->
 <div class="pnl">
   <div class="phd"><span class="pht">Control Panel</span><span class="phs">CONFIG</span></div>
   <div class="psc">
 
-    <!-- C CODE -->
     <div class="sec">
       <div class="sl">C Code Upload</div>
       <div class="dz" id="cdz">
@@ -258,7 +240,6 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
       </div>
     </div>
 
-    <!-- TRACK SOURCE -->
     <div class="sec">
       <div class="sl">Track Source</div>
       <div class="tbar">
@@ -285,28 +266,31 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
       </div>
     </div>
 
-    <!-- DRAW / EDIT TOOLS -->
+    <!-- TRACK EDITOR — fully functional -->
     <div class="sec">
       <div class="sl">Track Editor</div>
       <div class="tool-row">
-        <button class="tool-btn" id="tDraw" onclick="setTool('draw')">✏️ Draw</button>
-        <button class="tool-btn erase" id="tErase" onclick="setTool('erase')">⌫ Erase</button>
-        <button class="tool-btn setstart" id="tStart" onclick="setTool('setstart')">⚑ Start</button>
-        <button class="tool-btn" onclick="clearTrack()">🗑 Clear</button>
+        <button class="tbtn2" id="tDraw" onclick="setTool('draw')">✏️ Draw</button>
+        <button class="tbtn2 er" id="tErase" onclick="setTool('erase')">⌫ Erase</button>
+        <button class="tbtn2 ss" id="tStart" onclick="setTool('setstart')">⚑ Start Pt</button>
+      </div>
+      <div class="tool-row">
+        <button class="tbtn2" onclick="clearCanvas()" style="flex:2;">🗑 Clear Canvas</button>
+        <button class="tbtn2" onclick="rebuildPath()" style="flex:2;border-color:rgba(0,212,255,.3);color:var(--cy);">↻ Apply</button>
       </div>
       <div class="sz-row">
-        <span class="sz-label">Brush Size</span>
-        <input type="range" id="brushSz" min="4" max="30" value="12" style="flex:1;" oninput="document.getElementById('brushSzV').textContent=this.value">
-        <span style="font-family:var(--fm);font-size:10px;color:var(--cy);min-width:20px;" id="brushSzV">12</span>
+        <span class="szlbl">Brush</span>
+        <input type="range" id="brushSz" min="3" max="28" value="8" style="flex:1;" oninput="document.getElementById('bszV').textContent=this.value+'px'">
+        <span style="font-family:var(--fm);font-size:10px;color:var(--cy);min-width:28px;" id="bszV">8px</span>
       </div>
-      <div style="font-size:10px;color:var(--t2);line-height:1.5;">
-        <strong style="color:var(--t1)">Draw</strong> — paint the line on canvas<br>
-        <strong style="color:var(--t1)">Erase</strong> — remove parts of the line<br>
-        <strong style="color:var(--t1)">Start</strong> — click to set robot start point
+      <div class="hint-box">
+        <strong>Draw</strong> — paint black line on canvas<br>
+        <strong>Erase</strong> — white out any part of the line<br>
+        <strong>Start Pt</strong> — click to place robot start<br>
+        <strong>Apply</strong> — extract path from canvas & update robot route
       </div>
     </div>
 
-    <!-- PID PARAMS -->
     <div class="sec">
       <div class="sl">PID Parameters</div>
       <div class="prm">
@@ -314,7 +298,7 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
         <input type="range" id="rKp" min="0" max="5" step="0.05" value="1.2" oninput="sp('vKp',this.value,2)">
       </div>
       <div class="prm">
-        <div class="pr"><span class="pn">Ki — Integral</span><span class="pv" id="vKi">0.00</span></div>
+        <div class="pr"><span class="pn">Ki — Integral</span><span class="pv" id="vKi">0.000</span></div>
         <input type="range" id="rKi" min="0" max="1" step="0.005" value="0" oninput="sp('vKi',this.value,3)">
       </div>
       <div class="prm">
@@ -327,7 +311,6 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
       </div>
     </div>
 
-    <!-- SIM CONTROLS -->
     <div class="sec">
       <div class="sl">Simulation</div>
       <div class="btns">
@@ -344,15 +327,15 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
   </div>
 </div>
 
-<!-- ════ CENTER SIM ════ -->
+<!-- CENTER -->
 <div class="sima">
   <div class="simbar">
     <div class="stats">
       <div class="st"><span class="stl">TIME</span><span class="stv" id="sT">0.00s</span></div>
       <div class="st"><span class="stl">SPEED</span><span class="stv" id="sSp">0</span></div>
       <div class="st"><span class="stl">ERROR</span><span class="stv" id="sEr">0.00</span></div>
-      <div class="st"><span class="stl">LAP</span><span class="stv" id="sLp">0</span></div>
       <div class="st"><span class="stl">CORRECTION</span><span class="stv" id="sCorr">0.00</span></div>
+      <div class="st"><span class="stl">LAP</span><span class="stv" id="sLp">0</span></div>
     </div>
     <div class="togs">
       <label class="tl"><input type="checkbox" id="cks" checked> Sensors</label>
@@ -369,7 +352,7 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
   </div>
 </div>
 
-<!-- ════ RIGHT PANEL ════ -->
+<!-- RIGHT -->
 <div class="pnl R">
   <div class="phd"><span class="pht">Telemetry</span><span class="phs">LIVE DATA</span></div>
   <div class="psc">
@@ -378,10 +361,8 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
       <div class="sl">IR Sensor Array</div>
       <div style="display:flex;justify-content:space-between;font-family:var(--fm);font-size:8px;color:var(--t3);margin-bottom:5px;"><span>◀ LEFT</span><span>RIGHT ▶</span></div>
       <div class="sstrip">
-        <div class="sc" id="s0">S1<br>—</div>
-        <div class="sc" id="s1">S2<br>—</div>
-        <div class="sc" id="s2">S3<br>—</div>
-        <div class="sc" id="s3">S4<br>—</div>
+        <div class="sc" id="s0">S1<br>—</div><div class="sc" id="s1">S2<br>—</div>
+        <div class="sc" id="s2">S3<br>—</div><div class="sc" id="s3">S4<br>—</div>
         <div class="sc" id="s4">S5<br>—</div>
       </div>
       <div style="display:flex;justify-content:space-between;font-family:var(--fm);font-size:10px;">
@@ -400,13 +381,10 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
         <div class="mbh"><span class="mbl">RIGHT MOTOR</span><span class="mbv"><span id="mrv">0</span>/255</span></div>
         <div class="mbbg"><div class="mbf mfr" id="mrb"></div></div>
       </div>
-      <!-- PID correction differential bar — shows real PID effect -->
       <div class="pid-diff">
-        <span class="pid-diff-label">PID CORRECTION</span>
-        <div class="pid-diff-bar-wrap">
-          <div class="pid-diff-bar" id="pidDiffBar"></div>
-        </div>
-        <span class="pid-diff-val" id="pidDiffVal">0</span>
+        <span class="pid-diff-label">PID CORR</span>
+        <div class="pid-diff-wrap"><div class="pid-diff-bar" id="pdb"></div></div>
+        <span class="pid-diff-val" id="pdv">0.00</span>
       </div>
     </div>
 
@@ -440,11 +418,7 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
   <div class="mbox">
     <div class="mhd"><span class="mhdt">C CODE TEMPLATES</span><button class="mcls" onclick="hideMod()">✕</button></div>
     <div class="mbdy">
-      <p style="font-size:12px;color:var(--t1);margin-bottom:14px;line-height:1.7;">
-        Upload a <code style="color:var(--cy);background:var(--cyA);padding:1px 5px;border-radius:3px;">.c</code> file with
-        <code style="color:var(--cy);background:var(--cyA);padding:1px 5px;border-radius:3px;">compute_pid()</code>.
-        Simulator auto-parses <strong style="color:var(--t0)">KP, KI, KD, BASE_SPEED</strong> and applies them live.
-      </p>
+      <p style="font-size:12px;color:var(--t1);margin-bottom:14px;line-height:1.7;">Upload a <code style="color:var(--cy);background:var(--cyA);padding:1px 5px;border-radius:3px;">.c</code> file with <code style="color:var(--cy);background:var(--cyA);padding:1px 5px;border-radius:3px;">compute_pid()</code>. Simulator auto-parses <strong style="color:var(--t0)">KP, KI, KD, BASE_SPEED</strong>.</p>
       <div class="ttabs">
         <button class="ttb on" onclick="swTmpl(0,this)">Basic PID</button>
         <button class="ttb" onclick="swTmpl(1,this)">Advanced</button>
@@ -461,9 +435,19 @@ pre.tc{font-family:var(--fm);font-size:10.5px;color:#4db080;line-height:1.75;bac
 <div class="tst" id="tst"></div>
 
 <script>
-// ═══════════════════════════════════════════════════
-//  ROBOTRACE v6 — Every feature functional
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+//  ROBOTRACE v7
+//
+//  KEY ARCHITECTURE:
+//  - Canvas background = WHITE, track = BLACK line
+//  - Two layers:
+//      trackCanvas (offscreen) = the black-line track, used by sensors
+//      main canvas (#cvs)      = trackCanvas + robot overlay
+//  - Draw/Erase BOTH update trackCanvas pixels directly
+//  - After drawing, "Apply" extracts a path from trackCanvas pixels
+//  - Robot ALWAYS follows the extracted path array (not free pixels)
+//  - If no path extracted → robot doesn't run → no "phantom following"
+// ═══════════════════════════════════════════════════════
 
 const CV = document.getElementById('cvs');
 const CX = CV.getContext('2d');
@@ -471,8 +455,33 @@ const EC = document.getElementById('ecvs');
 const EX = EC.getContext('2d');
 const W = CV.width, H = CV.height;
 
-// ── TEMPLATES ──
-const TMPLS = [
+// ── THE SINGLE SOURCE OF TRUTH: offscreen track canvas ──
+// White background, black line drawn here.
+// Sensors read from this. Drawing/erasing modifies this.
+const TC  = document.createElement('canvas'); TC.width=W; TC.height=H;
+const TX  = TC.getContext('2d');
+
+function clearTrackCanvas() {
+  TX.fillStyle='#ffffff';
+  TX.fillRect(0,0,W,H);
+}
+
+// ── STATE ──
+let running=false, raf=null;
+let simT=0, lapN=0, lapStart=0, lastTS=0;
+let pid_intg=0, pid_prev=0;
+let trail=[];
+let eSum=0, eCnt=0, maxD=0;
+const EBUFSZ=220; let eBuf=new Array(EBUFSZ).fill(0);
+let pathT=0.0, pathSpeed=0;
+let activePath=[];       // THE robot path — extracted from canvas pixels
+let customStartIdx=0;    // index into activePath for start
+let activeTool=null;
+let isDrawing=false;
+let trackMode='pre', activeT=0;
+let allTracks=[];
+
+const TMPLS=[
 `// RoboTrace — Basic PID
 #define BASE_SPEED  80
 #define KP          1.2
@@ -495,7 +504,7 @@ void compute_pid(int sensors[5], int *L, int *R) {
     if(*L<0)*L=0; if(*L>255)*L=255;
     if(*R<0)*R=0; if(*R>255)*R=255;
 }`,
-`// RoboTrace — Advanced (speed scaling + recovery)
+`// RoboTrace — Advanced
 #define BASE_SPEED  100
 #define MAX_SPEED   180
 #define MIN_SPEED   25
@@ -520,7 +529,7 @@ void compute_pid(int sensors[5], int *L, int *R) {
     if(*L<0)*L=0; if(*L>MAX_SPEED)*L=MAX_SPEED;
     if(*R<0)*R=0; if(*R>MAX_SPEED)*R=MAX_SPEED;
 }`,
-`// RoboTrace — P-Only (Beginner)
+`// RoboTrace — P-Only
 #define BASE_SPEED  70
 #define KP          2.5
 
@@ -534,28 +543,9 @@ void compute_pid(int sensors[5], int *L, int *R) {
     if(*R<0)*R=0; if(*R>255)*R=255;
 }`];
 
-// ── STATE ──
-let running=false, raf=null;
-let simT=0, lapN=0, lapStart=0, lastTS=0;
-let pid_intg=0, pid_prev=0;
-let trail=[];
-let eSum=0, eCnt=0, maxD=0;
-const EBUFSZ=220; let eBuf=new Array(EBUFSZ).fill(0);
-let pathT=0.0, pathSpeed=0;
-let trackMode='pre', activeT=0, imgPath=[];
-let allTracks=[];
-
-// Draw/edit tool state
-let activeTool = null;       // 'draw' | 'erase' | 'setstart' | null
-let isDrawing  = false;
-let customStartPt = null;    // {x,y} — user-defined start point
-
-// Offscreen stamp: the "ground truth" track for sensor sampling
-let stamp = null;
-
 // ── BUILD PRESET TRACKS ──
-function makeTracks() {
-  const cx=W/2, cy=H/2;
+function makeTracks(){
+  const cx=W/2,cy=H/2;
   const oval=[];
   for(let i=0;i<=360;i+=1.0) oval.push({x:cx+285*Math.cos(i*Math.PI/180),y:cy+172*Math.sin(i*Math.PI/180)});
   const sc=[];
@@ -572,197 +562,172 @@ function makeTracks() {
       zz.push({x:0.5*((2*b.x)+(-a.x+c.x)*t+(2*a.x-5*b.x+4*c.x-d.x)*t2+(-a.x+3*b.x-3*c.x+d.x)*t3),y:0.5*((2*b.y)+(-a.y+c.y)*t+(2*a.y-5*b.y+4*c.y-d.y)*t2+(-a.y+3*b.y-3*c.y+d.y)*t3)});
     }
   }
-  return [oval,sc,f8,zz];
+  return[oval,sc,f8,zz];
 }
 
-function getPath() { return trackMode==='img' ? imgPath : allTracks[activeT]; }
-
-// ── BAKE OFFSCREEN STAMP ──
-function bake(p) {
-  const oc=document.createElement('canvas'); oc.width=W; oc.height=H;
-  const ox=oc.getContext('2d');
-  ox.fillStyle='#010308'; ox.fillRect(0,0,W,H);
-  ox.strokeStyle='rgba(255,255,255,0.025)'; ox.lineWidth=1;
-  for(let x=0;x<W;x+=40){ox.beginPath();ox.moveTo(x,0);ox.lineTo(x,H);ox.stroke();}
-  for(let y=0;y<H;y+=40){ox.beginPath();ox.moveTo(0,y);ox.lineTo(W,y);ox.stroke();}
-  if(!p||p.length<2){stamp=oc;return;}
-  ox.strokeStyle='#dce8ff'; ox.lineWidth=30; ox.lineCap='round'; ox.lineJoin='round';
-  ox.beginPath(); ox.moveTo(p[0].x,p[0].y);
-  for(let i=1;i<p.length;i++) ox.lineTo(p[i].x,p[i].y);
-  ox.stroke();
-  ox.strokeStyle='#010308'; ox.lineWidth=7;
-  ox.beginPath(); ox.moveTo(p[0].x,p[0].y);
-  for(let i=1;i<p.length;i++) ox.lineTo(p[i].x,p[i].y);
-  ox.stroke();
-  stamp=oc;
-  renderStamp();
+// ── PAINT PRESET TRACK ONTO TRACK CANVAS ──
+function paintPreset(path){
+  clearTrackCanvas();
+  if(!path||path.length<2) return;
+  // Draw single black line on white — exactly as real track
+  TX.strokeStyle='#111111';
+  TX.lineWidth=6;
+  TX.lineCap='round';
+  TX.lineJoin='round';
+  TX.beginPath(); TX.moveTo(path[0].x,path[0].y);
+  for(let i=1;i<path.length;i++) TX.lineTo(path[i].x,path[i].y);
+  TX.stroke();
+  // Start dot
+  TX.fillStyle='#00cc66';
+  TX.beginPath(); TX.arc(path[0].x,path[0].y,7,0,Math.PI*2); TX.fill();
 }
 
-// Render stamp + start marker to main canvas
-function renderStamp() {
-  if(stamp) CX.drawImage(stamp,0,0);
+// Render trackCanvas to main canvas (for display when not running)
+function renderTrackToMain(){
+  CX.drawImage(TC,0,0);
+  // Add subtle grid overlay on top
+  CX.strokeStyle='rgba(0,0,0,0.04)'; CX.lineWidth=1;
+  for(let x=0;x<W;x+=40){CX.beginPath();CX.moveTo(x,0);CX.lineTo(x,H);CX.stroke();}
+  for(let y=0;y<H;y+=40){CX.beginPath();CX.moveTo(0,y);CX.lineTo(W,y);CX.stroke();}
+}
+
+// ── EXTRACT PATH FROM TRACK CANVAS ──
+// Scans the black pixels in TC, orders them into a path array
+// This is what ACTUALLY controls the robot
+function rebuildPath(){
+  const imgData = TX.getImageData(0,0,W,H);
+  const px = imgData.data;
+  const GRID=8;
+  const centers=[];
+  for(let y=GRID;y<H-GRID;y+=GRID){
+    for(let x=GRID;x<W-GRID;x+=GRID){
+      let cnt=0,sx=0,sy=0;
+      for(let dy=-GRID;dy<=GRID;dy++){
+        for(let dx=-GRID;dx<=GRID;dx++){
+          const nx=x+dx,ny=y+dy;
+          if(nx<0||nx>=W||ny<0||ny>=H) continue;
+          const i=(ny*W+nx)*4;
+          // Dark pixel = black line (r+g+b < 200 on white canvas)
+          if(px[i]+px[i+1]+px[i+2]<200){cnt++;sx+=nx;sy+=ny;}
+        }
+      }
+      if(cnt>4) centers.push({x:sx/cnt,y:sy/cnt});
+    }
+  }
+  if(centers.length<6){
+    log('No line detected on canvas — draw a black line first','wn');
+    toast('No path found. Draw a line first!','wn');
+    return false;
+  }
+  // Order via greedy nearest-neighbour + angle continuity
+  const used=new Uint8Array(centers.length);
+  let si=centers.reduce((a,_,i)=>centers[i].x+centers[i].y<centers[a].x+centers[a].y?i:a,0);
+  const ordered=[centers[si]]; used[si]=1;
+  let cx2=centers[si].x,cy2=centers[si].y,prevA=0;
+  const REACH=W*0.12;
+  for(let iter=0;iter<centers.length*2;iter++){
+    let bi=-1,bs=-Infinity;
+    for(let i=0;i<centers.length;i++){
+      if(used[i])continue;
+      const dx=centers[i].x-cx2,dy=centers[i].y-cy2;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist>REACH||dist<1)continue;
+      const ang=Math.atan2(dy,dx);
+      const score=Math.cos(ang-prevA)*2-dist/REACH;
+      if(score>bs){bs=score;bi=i;}
+    }
+    if(bi<0)break;
+    used[bi]=1; ordered.push(centers[bi]);
+    const dx=centers[bi].x-cx2,dy=centers[bi].y-cy2;
+    prevA=Math.atan2(dy,dx); cx2=centers[bi].x; cy2=centers[bi].y;
+  }
+  if(ordered.length<6){
+    log('Path too short — make sure line is continuous','wn');
+    return false;
+  }
+  // Smooth
+  const smooth=(arr,r)=>arr.map((_,i)=>{let sx=0,sy=0,tw=0;for(let j=Math.max(0,i-r);j<=Math.min(arr.length-1,i+r);j++){const w=r+1-Math.abs(j-i);sx+=arr[j].x*w;sy+=arr[j].y*w;tw+=w;}return{x:sx/tw,y:sy/tw};});
+  let p=smooth(smooth(smooth(ordered,3),3),3);
+  const dc=Math.hypot(p[0].x-p[p.length-1].x,p[0].y-p[p.length-1].y);
+  if(dc<W*0.25) p.push({...p[0]});
+  activePath=p;
+  customStartIdx=0;
+  log(`Path rebuilt: ${p.length} waypoints`,'ok');
+  toast('Path updated — ready to RUN','ok');
+  renderTrackToMain();
+  // Draw start marker
   drawStartMarker();
+  return true;
 }
 
-function drawStartMarker() {
-  const p=getPath(); if(!p||p.length<2) return;
-  const sp=customStartPt || p[0];
-  CX.fillStyle='rgba(0,255,136,0.9)';
-  CX.beginPath(); CX.arc(sp.x,sp.y,6,0,Math.PI*2); CX.fill();
-  CX.strokeStyle='rgba(0,255,136,0.3)'; CX.lineWidth=1.5;
+function drawStartMarker(){
+  if(!activePath.length) return;
+  const sp=activePath[customStartIdx]||activePath[0];
+  CX.fillStyle='rgba(0,200,80,0.9)';
+  CX.beginPath(); CX.arc(sp.x,sp.y,7,0,Math.PI*2); CX.fill();
+  CX.strokeStyle='rgba(0,255,100,0.4)'; CX.lineWidth=1.5;
   CX.beginPath(); CX.arc(sp.x,sp.y,14,0,Math.PI*2); CX.stroke();
-  // label
-  CX.fillStyle='rgba(0,255,136,0.8)';
-  CX.font='bold 10px JetBrains Mono, monospace';
-  CX.fillText('START', sp.x+18, sp.y+4);
+  CX.fillStyle='#006633'; CX.font='bold 10px JetBrains Mono,monospace';
+  CX.fillText('START',sp.x+18,sp.y+4);
 }
 
-// ── DRAW TOOLS ──
-function setTool(t) {
-  activeTool = (activeTool===t) ? null : t;
-  ['tDraw','tErase','tStart'].forEach(id=>document.getElementById(id).classList.remove('on'));
-  CV.className='';
-  if(activeTool==='draw')    { document.getElementById('tDraw').classList.add('on');  CV.className='draw-mode'; }
-  if(activeTool==='erase')   { document.getElementById('tErase').classList.add('on'); CV.className='erase-mode'; }
-  if(activeTool==='setstart'){ document.getElementById('tStart').classList.add('on'); CV.className='setstart-mode'; }
-  if(activeTool) log(`Tool: ${activeTool.toUpperCase()} — click/drag on canvas`,'in');
-}
-
-function clearTrack() {
-  if(running) return;
-  imgPath=[];
-  customStartPt=null;
-  trackMode='pre';
-  bake(allTracks[activeT]);
-  renderStamp();
-  log('Track cleared — using preset','wn');
-}
-
-// Canvas mouse events for drawing
-function canvasPos(e) {
-  const r=CV.getBoundingClientRect();
-  const scaleX=W/r.width, scaleY=H/r.height;
-  return {x:(e.clientX-r.left)*scaleX, y:(e.clientY-r.top)*scaleY};
-}
-
-CV.addEventListener('mousedown', e => {
-  if(!activeTool||running) return;
-  e.preventDefault();
-  if(activeTool==='setstart') {
-    const pos=canvasPos(e);
-    customStartPt={...pos};
-    renderStamp();
-    log(`Start point set at (${Math.round(pos.x)}, ${Math.round(pos.y)})`,'ok');
-    setTool(null);
-    return;
-  }
-  isDrawing=true;
-  paintAt(canvasPos(e));
-});
-CV.addEventListener('mousemove', e => {
-  if(!isDrawing||!activeTool||running) return;
-  paintAt(canvasPos(e));
-});
-CV.addEventListener('mouseup',  () => { if(isDrawing){ isDrawing=false; rebuildStampFromCanvas(); } });
-CV.addEventListener('mouseleave',()=> { if(isDrawing){ isDrawing=false; rebuildStampFromCanvas(); } });
-
-// Touch support
-CV.addEventListener('touchstart', e=>{ e.preventDefault(); if(!activeTool||running)return; const t=e.touches[0]; if(activeTool==='setstart'){const pos=canvasPos(t);customStartPt={...pos};renderStamp();log(`Start point set`,'ok');setTool(null);return;} isDrawing=true;paintAt(canvasPos(t));},{passive:false});
-CV.addEventListener('touchmove',  e=>{ e.preventDefault(); if(!isDrawing||running)return; paintAt(canvasPos(e.touches[0]));},{passive:false});
-CV.addEventListener('touchend',   ()=>{ if(isDrawing){isDrawing=false;rebuildStampFromCanvas();}});
-
-function paintAt({x,y}) {
-  const sz=parseInt(document.getElementById('brushSz').value);
-  if(activeTool==='draw') {
-    CX.fillStyle='#dce8ff'; CX.beginPath(); CX.arc(x,y,sz,0,Math.PI*2); CX.fill();
-    // black center dot
-    CX.fillStyle='#010308'; CX.beginPath(); CX.arc(x,y,sz*0.22,0,Math.PI*2); CX.fill();
-  } else if(activeTool==='erase') {
-    CX.fillStyle='#010308'; CX.beginPath(); CX.arc(x,y,sz,0,Math.PI*2); CX.fill();
-  }
-}
-
-// After drawing, bake current canvas state INTO the stamp so sensors read it
-function rebuildStampFromCanvas() {
-  const oc=document.createElement('canvas'); oc.width=W; oc.height=H;
-  const ox=oc.getContext('2d');
-  ox.drawImage(CV,0,0); // copy main canvas → stamp
-  stamp=oc;
-  log('Track updated from drawing','in');
-}
-
-// ── SENSOR READ (always from stamp) ──
-function readSensors(rx,ry,ra) {
-  if(!stamp) return [0,0,0,0,0];
-  const ox=stamp.getContext('2d');
-  const sp=10; // fixed 10px spread — reliable for 30px track width
-  return [-2*sp,-sp,0,sp,2*sp].map(off=>{
+// ── SENSORS — read from trackCanvas (black on white) ──
+// ON = dark pixel = black line (inverted from before!)
+function readSensors(rx,ry,ra){
+  const sp=10;
+  return[-2*sp,-sp,0,sp,2*sp].map(off=>{
     const sx=rx+off*Math.cos(ra)+14*Math.sin(ra);
     const sy=ry+off*Math.sin(ra)-14*Math.cos(ra);
     if(sx<0||sx>=W||sy<0||sy>=H) return 0;
-    const d=ox.getImageData(Math.round(sx),Math.round(sy),1,1).data;
-    return (d[0]+d[1]+d[2])/3 > 130 ? 1 : 0;
+    const d=TX.getImageData(Math.round(sx),Math.round(sy),1,1).data;
+    // Dark pixel = ON (r+g+b < 200 on white background)
+    return (d[0]+d[1]+d[2])<200 ? 1 : 0;
   });
 }
 
-// ── PID — every parameter is actually used ──
-function runPID(sensors) {
-  const kp  = parseFloat(document.getElementById('rKp').value);
-  const ki  = parseFloat(document.getElementById('rKi').value);
-  const kd  = parseFloat(document.getElementById('rKd').value);
-  const base= parseInt(document.getElementById('rBs').value);
-  const sum = sensors.reduce((a,b)=>a+b,0);
-  let pos   = sum>0
-    ? (-2*sensors[0]-sensors[1]+0*sensors[2]+sensors[3]+2*sensors[4])/sum
-    : pid_prev;
-
-  const err  = pos;
-  // Integral: accumulates error over time — Ki controls how much it matters
-  pid_intg   = pid_intg * 0.95 + err; // slow decay to show Ki effect
-  const deriv= err - pid_prev;
-  const corr = kp*err + ki*pid_intg + kd*deriv;
-  pid_prev   = err;
-
-  // Speed scaling: high error → slow down (curve handling)
-  const absE = Math.abs(err);
-  const spd  = Math.max(15, Math.round(base*(1-0.55*absE)));
-
-  let L=Math.round(spd-corr), R=Math.round(spd+corr);
+// ── PID ──
+function runPID(sensors){
+  const kp=parseFloat(document.getElementById('rKp').value);
+  const ki=parseFloat(document.getElementById('rKi').value);
+  const kd=parseFloat(document.getElementById('rKd').value);
+  const base=parseInt(document.getElementById('rBs').value);
+  const sum=sensors.reduce((a,b)=>a+b,0);
+  let pos=sum>0?(-2*sensors[0]-sensors[1]+0*sensors[2]+sensors[3]+2*sensors[4])/sum:pid_prev;
+  const err=pos;
+  pid_intg=pid_intg*0.95+err;
+  const corr=kp*err+ki*pid_intg+kd*(err-pid_prev);
+  pid_prev=err;
+  const spd=Math.max(15,Math.round(base*(1-0.55*Math.abs(err))));
+  let L=Math.round(spd-corr),R=Math.round(spd+corr);
   L=Math.max(0,Math.min(255,L)); R=Math.max(0,Math.min(255,R));
-  return {L,R,err,corr,spd};
+  return{L,R,err,corr,spd};
 }
 
-// ── PATH INTERPOLATION ──
-function pathAt(p,t) {
-  const N=p.length;
-  const i=Math.floor(t)%N, j=(i+1)%N, k=(i+3)%N;
-  const f=t-Math.floor(t);
-  return {
-    x:p[i].x+(p[j].x-p[i].x)*f,
-    y:p[i].y+(p[j].y-p[i].y)*f,
-    angle:Math.atan2(p[k].y-p[i].y, p[k].x-p[i].x)
-  };
+function pathAt(p,t){
+  const N=p.length,i=Math.floor(t)%N,j=(i+1)%N,k=(i+3)%N,f=t-Math.floor(t);
+  return{x:p[i].x+(p[j].x-p[i].x)*f,y:p[i].y+(p[j].y-p[i].y)*f,angle:Math.atan2(p[k].y-p[i].y,p[k].x-p[i].x)};
 }
 
-// ── DRAW ROBOT ──
-function drawRobot(rx,ry,ra,sx) {
+// ── DRAW ROBOT (on main canvas, not trackCanvas) ──
+function drawRobot(rx,ry,ra,sx){
   CX.save(); CX.translate(rx,ry); CX.rotate(ra);
-  CX.shadowColor='rgba(0,212,255,0.5)'; CX.shadowBlur=14;
+  CX.shadowColor='rgba(0,100,255,0.6)'; CX.shadowBlur=12;
   const g=CX.createLinearGradient(-15,-11,15,11);
-  g.addColorStop(0,'#162848'); g.addColorStop(1,'#080f1e');
-  CX.fillStyle=g; CX.strokeStyle='rgba(0,212,255,0.7)'; CX.lineWidth=1.5;
+  g.addColorStop(0,'#1a3a80'); g.addColorStop(1,'#0a1840');
+  CX.fillStyle=g; CX.strokeStyle='#0088ff'; CX.lineWidth=1.5;
   CX.beginPath();
   CX.moveTo(-14,-11);CX.lineTo(12,-11);CX.lineTo(16,-5);CX.lineTo(18,0);CX.lineTo(16,5);CX.lineTo(12,11);CX.lineTo(-14,11);CX.closePath();
   CX.fill(); CX.stroke();
-  CX.fillStyle='rgba(0,212,255,0.9)';
+  CX.fillStyle='#00aaff';
   CX.beginPath();CX.moveTo(20,0);CX.lineTo(14,-4);CX.lineTo(14,4);CX.closePath();CX.fill();
-  CX.fillStyle='rgba(0,40,90,0.8)'; CX.shadowBlur=0;
+  CX.fillStyle='rgba(0,20,60,0.9)'; CX.shadowBlur=0;
   [[-13,-14,7,4],[-13,10,7,4],[5,-14,7,4],[5,10,7,4]].forEach(([x,y,w,h])=>CX.fillRect(x,y,w,h));
-  if(document.getElementById('cks').checked && sx) {
-    const sp=10;
-    [-2*sp,-sp,0,sp,2*sp].forEach((off,i)=>{
-      CX.fillStyle=sx[i]?'rgba(0,255,136,0.95)':'rgba(20,50,90,0.7)';
-      CX.shadowColor=sx[i]?'rgba(0,255,136,0.7)':'none'; CX.shadowBlur=sx[i]?8:0;
+  if(document.getElementById('cks').checked&&sx){
+    const sp2=10;
+    [-2*sp2,-sp2,0,sp2,2*sp2].forEach((off,i)=>{
+      CX.fillStyle=sx[i]?'rgba(0,255,100,0.95)':'rgba(100,150,200,0.5)';
+      CX.shadowColor=sx[i]?'rgba(0,255,100,0.8)':'none';
+      CX.shadowBlur=sx[i]?7:0;
       CX.beginPath();CX.arc(off,14,3,0,Math.PI*2);CX.fill();
     });
   }
@@ -770,34 +735,31 @@ function drawRobot(rx,ry,ra,sx) {
 }
 
 // ── MAIN LOOP ──
-function loop(ts) {
-  if(!running) return;
+function loop(ts){
+  if(!running)return;
   const dt=Math.min((ts-lastTS)/1000,0.033);
   lastTS=ts; simT+=dt;
-  const p=getPath(); const N=p.length;
-
+  const p=activePath; if(!p||p.length<4){simPause();log('No path! Apply track first.','er');return;}
+  const N=p.length;
   const pos=pathAt(p,pathT);
   const sx=readSensors(pos.x,pos.y,pos.angle);
-  const {L,R,err,corr,spd:pidSpd}=runPID(sx);
-
-  // Speed along path driven by motor average
+  const{L,R,err,corr,spd:ps}=runPID(sx);
   const motorAvg=(L+R)/2;
-  const targetSpeed=motorAvg*0.55;
-  pathSpeed+=(targetSpeed-pathSpeed)*Math.min(1,dt*8);
+  const target=motorAvg*0.55;
+  pathSpeed+=(target-pathSpeed)*Math.min(1,dt*8);
   pathT+=pathSpeed*dt;
   if(pathT>=N) pathT-=N;
-
   trail.push({x:pos.x,y:pos.y});
   if(trail.length>700) trail.shift();
 
   // Lap detection
   const fracT=pathT/N;
-  if(fracT<0.05&&simT-lapStart>3&&simT>3) {
+  const distToStart=Math.hypot(p[customStartIdx].x-pos.x,p[customStartIdx].y-pos.y);
+  if(distToStart<25&&simT-lapStart>3&&simT>2){
     lapN++;
     const lt=simT-lapStart; lapStart=simT;
-    // Real score: based on avg PID error magnitude (lower error = better score)
     const avgE=eSum/Math.max(1,eCnt);
-    const score=Math.max(0,Math.min(100, Math.round(100-avgE*40-maxD*20)));
+    const score=Math.max(0,Math.min(100,Math.round(100-avgE*40-maxD*20)));
     document.getElementById('mLt').textContent=lt.toFixed(2)+'s';
     document.getElementById('mSc').textContent=score+'/100';
     document.getElementById('sLp').textContent=lapN;
@@ -805,19 +767,17 @@ function loop(ts) {
     document.getElementById('lapb').style.display='block';
     setTimeout(()=>document.getElementById('lapb').style.display='none',3000);
     log(`Lap ${lapN} — ${lt.toFixed(2)}s — Score: ${score}/100`,'ok');
-    trail=[]; eSum=0; eCnt=0; maxD=0;
+    trail=[];eSum=0;eCnt=0;maxD=0;
   }
 
-  const ae=Math.abs(err);
-  eSum+=ae; eCnt++;
-  if(ae>maxD) maxD=ae;
+  const ae=Math.abs(err); eSum+=ae; eCnt++; if(ae>maxD)maxD=ae;
   eBuf.push(err); if(eBuf.length>EBUFSZ) eBuf.shift();
 
-  // Draw frame
-  if(stamp) CX.drawImage(stamp,0,0);
+  // Render: trackCanvas first, then trail, then robot
+  CX.drawImage(TC,0,0);
   if(trail.length>1&&document.getElementById('ckt').checked){
-    CX.strokeStyle='rgba(0,212,255,0.16)'; CX.lineWidth=2;
-    CX.beginPath(); CX.moveTo(trail[0].x,trail[0].y);
+    CX.strokeStyle='rgba(0,120,255,0.25)'; CX.lineWidth=2;
+    CX.beginPath();CX.moveTo(trail[0].x,trail[0].y);
     for(let i=1;i<trail.length;i++) CX.lineTo(trail[i].x,trail[i].y);
     CX.stroke();
   }
@@ -825,12 +785,9 @@ function loop(ts) {
   drawRobot(pos.x,pos.y,pos.angle,sx);
   drawErrGraph();
 
-  // Progress
   const pct=Math.min(99,Math.round(fracT*100));
   document.getElementById('pgfl').style.width=pct+'%';
   document.getElementById('pct').textContent=pct+'%';
-
-  // UI telemetry — all real values
   document.getElementById('sT').textContent=simT.toFixed(2)+'s';
   document.getElementById('sSp').textContent=Math.round(pathSpeed);
   document.getElementById('sEr').textContent=err.toFixed(3);
@@ -841,17 +798,12 @@ function loop(ts) {
   document.getElementById('mrb').style.width=(R/255*100)+'%';
   document.getElementById('mlv').textContent=L;
   document.getElementById('mrv').textContent=R;
-
-  // PID correction differential bar
-  const corrPct=Math.min(100,Math.abs(corr)/50*100);
-  const bar=document.getElementById('pidDiffBar');
-  bar.style.width=corrPct+'%';
-  bar.style.left=corr>0?'50%':'calc(50% - '+corrPct/2+'%)';
-  bar.style.background=corr>0?'#ff3b5c':'#00d4ff';
-  bar.style.width=(corrPct/2)+'%';
-  bar.style.left=corr>0?'50%':(50-corrPct/2)+'%';
-  document.getElementById('pidDiffVal').textContent=corr.toFixed(1);
-
+  // PID correction bar
+  const cPct=Math.min(50,Math.abs(corr));
+  document.getElementById('pdb').style.width=cPct+'%';
+  document.getElementById('pdb').style.left=corr>0?'50%':(50-cPct)+'%';
+  document.getElementById('pdb').style.background=corr>0?'#ff3b5c':'#00d4ff';
+  document.getElementById('pdv').textContent=corr.toFixed(1);
   let wp=0; sx.forEach((s,i)=>wp+=s*(i-2));
   document.getElementById('wpos').textContent=wp.toFixed(2);
   for(let i=0;i<5;i++){
@@ -862,38 +814,94 @@ function loop(ts) {
   raf=requestAnimationFrame(loop);
 }
 
-function drawErrGraph() {
-  const ew=EC.width=EC.offsetWidth||240, eh=EC.height=72;
-  EX.fillStyle='#020509'; EX.fillRect(0,0,ew,eh);
-  EX.strokeStyle='rgba(255,255,255,0.06)'; EX.lineWidth=1; EX.setLineDash([3,4]);
+function drawErrGraph(){
+  const ew=EC.width=EC.offsetWidth||240,eh=EC.height=72;
+  EX.fillStyle='#020509';EX.fillRect(0,0,ew,eh);
+  EX.strokeStyle='rgba(255,255,255,0.06)';EX.lineWidth=1;EX.setLineDash([3,4]);
   EX.beginPath();EX.moveTo(0,eh/2);EX.lineTo(ew,eh/2);EX.stroke();EX.setLineDash([]);
   const step=ew/EBUFSZ;
   EX.fillStyle='rgba(255,184,0,0.07)';
   EX.beginPath();
   eBuf.forEach((v,i)=>{const x=i*step,y=eh/2-v*(eh/2)*0.55;i===0?EX.moveTo(x,y):EX.lineTo(x,y);});
   EX.lineTo(ew,eh/2);EX.lineTo(0,eh/2);EX.closePath();EX.fill();
-  EX.strokeStyle='#ffb800'; EX.lineWidth=1.5;
+  EX.strokeStyle='#ffb800';EX.lineWidth=1.5;
   EX.beginPath();
   eBuf.forEach((v,i)=>{const x=i*step,y=eh/2-v*(eh/2)*0.55;i===0?EX.moveTo(x,y):EX.lineTo(x,y);});
   EX.stroke();
 }
 
-// ── SIM CONTROLS ──
-function simGo() {
-  if(running) return;
-  const p=getPath();
-  if(!p||p.length<4){toast('No track! Select one first.','wn');return;}
+// ── DRAW TOOLS ──
+function setTool(t){
+  activeTool=(activeTool===t)?null:t;
+  ['tDraw','tErase','tStart'].forEach(id=>document.getElementById(id).classList.remove('on'));
+  CV.className='';
+  if(activeTool==='draw'){document.getElementById('tDraw').classList.add('on');CV.className='draw-mode';}
+  if(activeTool==='erase'){document.getElementById('tErase').classList.add('on');CV.className='erase-mode';}
+  if(activeTool==='setstart'){document.getElementById('tStart').classList.add('on');CV.className='setstart-mode';}
+}
 
-  // Find closest point on path to custom start point
-  let startPtIdx=0;
-  if(customStartPt) {
-    let minD=Infinity;
-    p.forEach((pt,i)=>{const d=Math.hypot(pt.x-customStartPt.x,pt.y-customStartPt.y);if(d<minD){minD=d;startPtIdx=i;}});
+function canvasPos(e){
+  const r=CV.getBoundingClientRect();
+  return{x:(e.clientX-r.left)*(W/r.width),y:(e.clientY-r.top)*(H/r.height)};
+}
+
+function paintAt({x,y}){
+  const sz=parseInt(document.getElementById('brushSz').value);
+  if(activeTool==='draw'){
+    // Paint black line on the TRACK CANVAS (TC)
+    TX.fillStyle='#111111';
+    TX.beginPath();TX.arc(x,y,sz,0,Math.PI*2);TX.fill();
+  } else if(activeTool==='erase'){
+    // Erase on TRACK CANVAS — paint white
+    TX.fillStyle='#ffffff';
+    TX.beginPath();TX.arc(x,y,sz*1.5,0,Math.PI*2);TX.fill();
   }
-  pathT=startPtIdx; pathSpeed=0;
-  trail=[]; pid_intg=0; pid_prev=0;
-  eSum=0; eCnt=0; maxD=0;
-  lapN=0; lapStart=0; simT=0;
+  // Always mirror track canvas to main canvas while editing
+  renderTrackToMain();
+}
+
+CV.addEventListener('mousedown',e=>{
+  if(!activeTool||running){return;}
+  e.preventDefault();
+  if(activeTool==='setstart'){
+    const pos=canvasPos(e);
+    // Find closest point on current path to clicked position
+    if(activePath.length>0){
+      let minD=Infinity,minI=0;
+      activePath.forEach((pt,i)=>{const d=Math.hypot(pt.x-pos.x,pt.y-pos.y);if(d<minD){minD=d;minI=i;}});
+      customStartIdx=minI;
+      renderTrackToMain();drawStartMarker();
+      log(`Start point set at path index ${minI}`,'ok');
+    } else {
+      log('Build path first (click Apply)','wn');
+    }
+    setTool(null);return;
+  }
+  isDrawing=true;paintAt(canvasPos(e));
+});
+CV.addEventListener('mousemove',e=>{if(!isDrawing||!activeTool||running)return;paintAt(canvasPos(e));});
+CV.addEventListener('mouseup',()=>{isDrawing=false;});
+CV.addEventListener('mouseleave',()=>{isDrawing=false;});
+CV.addEventListener('touchstart',e=>{e.preventDefault();if(!activeTool||running)return;const t=e.touches[0];if(activeTool==='setstart'){const pos=canvasPos(t);if(activePath.length>0){let minD=Infinity,minI=0;activePath.forEach((pt,i)=>{const d=Math.hypot(pt.x-pos.x,pt.y-pos.y);if(d<minD){minD=d;minI=i;}});customStartIdx=minI;renderTrackToMain();drawStartMarker();}setTool(null);return;}isDrawing=true;paintAt(canvasPos(t));},{passive:false});
+CV.addEventListener('touchmove',e=>{e.preventDefault();if(!isDrawing||running)return;paintAt(canvasPos(e.touches[0]));},{passive:false});
+CV.addEventListener('touchend',()=>{isDrawing=false;});
+
+function clearCanvas(){
+  if(running)return;
+  clearTrackCanvas();
+  activePath=[];customStartIdx=0;
+  renderTrackToMain();
+  log('Canvas cleared — draw your track or select a preset','wn');
+  toast('Canvas cleared','wn');
+}
+
+// ── SIM CONTROLS ──
+function simGo(){
+  if(running)return;
+  if(activePath.length<4){toast('Build the path first — click Apply','wn');return;}
+  pathT=customStartIdx; pathSpeed=0;
+  trail=[];pid_intg=0;pid_prev=0;
+  eSum=0;eCnt=0;maxD=0;lapN=0;lapStart=0;simT=0;
   eBuf=new Array(EBUFSZ).fill(0);
   document.getElementById('ovl').classList.add('gone');
   document.getElementById('lapb').style.display='none';
@@ -907,20 +915,21 @@ function simGo() {
   raf=requestAnimationFrame(loop);
 }
 
-function simPause() {
+function simPause(){
   if(!running)return;
-  running=false; if(raf)cancelAnimationFrame(raf);
+  running=false;if(raf)cancelAnimationFrame(raf);
   document.getElementById('brun').disabled=false;
   document.getElementById('bstp').disabled=true;
-  setStatus('pau','PAUSED'); log('Paused','wn');
+  setStatus('pau','PAUSED');log('Paused','wn');
+  renderTrackToMain();drawStartMarker();
 }
 
-function simReset() {
-  simPause(); running=false;
-  simT=0;lapN=0;lapStart=0;pathT=0;pathSpeed=0;
+function simReset(){
+  simPause();running=false;
+  simT=0;lapN=0;lapStart=0;pathT=customStartIdx;pathSpeed=0;
   pid_intg=0;pid_prev=0;eSum=0;eCnt=0;maxD=0;
   trail=[];eBuf=new Array(EBUFSZ).fill(0);
-  document.getElementById('pgfl').style.width='0%';
+  ['pgfl'].forEach(id=>document.getElementById(id).style.width='0%');
   document.getElementById('pct').textContent='0%';
   document.getElementById('sT').textContent='0.00s';
   document.getElementById('sSp').textContent='0';
@@ -936,15 +945,15 @@ function simReset() {
   document.getElementById('mlv').textContent='0';
   document.getElementById('mrv').textContent='0';
   document.getElementById('wpos').textContent='0.00';
-  document.getElementById('pidDiffBar').style.width='0%';
-  document.getElementById('pidDiffVal').textContent='0';
+  document.getElementById('pdb').style.width='0%';
+  document.getElementById('pdv').textContent='0.00';
   for(let i=0;i<5;i++){const e=document.getElementById('s'+i);e.className='sc';e.innerHTML=`S${i+1}<br>—`;}
   setStatus('','IDLE');
   document.getElementById('brun').disabled=false;
   document.getElementById('bstp').disabled=true;
   document.getElementById('ovl').classList.remove('gone');
   document.getElementById('lapb').style.display='none';
-  renderStamp(); drawErrGraph();
+  renderTrackToMain();drawStartMarker();drawErrGraph();
   log('Reset','wn');
 }
 
@@ -955,25 +964,25 @@ function setStatus(cls,txt){
 }
 
 // ── TRACK SELECT ──
-function selT(idx,btn) {
-  activeT=idx; trackMode='pre'; customStartPt=null;
+function selT(idx,btn){
+  if(running)return;
+  activeT=idx; trackMode='pre';
   document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
   const names=['OVAL','S-CURVE','FIGURE-8','ZIGZAG'];
   document.getElementById('tchip').textContent=names[idx];
-  bake(allTracks[idx]);
-  if(!running){renderStamp();document.getElementById('ovl').classList.remove('gone');}
-  log('Track: '+names[idx],'in');
+  paintPreset(allTracks[idx]);
+  // Auto-extract path so robot can run immediately
+  rebuildPath();
+  document.getElementById('ovl').classList.remove('gone');
+  log('Track: '+names[idx]+' — path ready','in');
 }
 
 function swTab(t){
-  trackMode=t;
   document.getElementById('tpre').classList.toggle('on',t==='pre');
   document.getElementById('timg').classList.toggle('on',t==='img');
   document.getElementById('ppre').style.display=t==='pre'?'':'none';
   document.getElementById('pimg').style.display=t==='img'?'':'none';
-  if(t==='pre'){bake(allTracks[activeT]);renderStamp();}
-  else if(imgPath.length>0){bake(imgPath);renderStamp();}
 }
 
 // ── IMAGE TO TRACK ──
@@ -983,166 +992,99 @@ document.getElementById('ifi').addEventListener('change',e=>{
   document.getElementById('ipw').classList.add('on');
   document.getElementById('ist').textContent='Loaded — click SCAN';
   document.getElementById('bpro').disabled=false;
-  log('Image loaded: '+f.name,'in');
 });
 
-function processImg() {
+function processImg(){
   const img=document.getElementById('iprv');
   const btn=document.getElementById('bpro');
   const sc=document.getElementById('iscan');
   btn.disabled=true; btn.textContent='⬡ SCANNING...';
   sc.style.display='block'; sc.textContent='Scanning...';
   setTimeout(()=>{
-    try {
-      const WORK_W=400,WORK_H=300;
-      const oc=document.createElement('canvas');oc.width=WORK_W;oc.height=WORK_H;
-      const ox=oc.getContext('2d');ox.drawImage(img,0,0,WORK_W,WORK_H);
-      const raw=ox.getImageData(0,0,WORK_W,WORK_H).data;
-      const grey=new Uint8Array(WORK_W*WORK_H);
-      for(let i=0;i<grey.length;i++) grey[i]=Math.round(0.299*raw[i*4]+0.587*raw[i*4+1]+0.114*raw[i*4+2]);
-      // Otsu threshold
+    try{
+      // Draw image onto track canvas (white bg, then image)
+      clearTrackCanvas();
+      TX.drawImage(img,0,0,W,H);
+      // Convert to high-contrast black on white
+      const id=TX.getImageData(0,0,W,H);
+      const px=id.data;
+      // Otsu
+      const grey=new Uint8Array(W*H);
+      for(let i=0;i<W*H;i++) grey[i]=Math.round(0.299*px[i*4]+0.587*px[i*4+1]+0.114*px[i*4+2]);
       const hist=new Int32Array(256);
       for(let i=0;i<grey.length;i++) hist[grey[i]]++;
-      const N=grey.length; let sumAll=0;
-      for(let i=0;i<256;i++) sumAll+=i*hist[i];
+      let sumAll=0; for(let i=0;i<256;i++) sumAll+=i*hist[i];
       let sumB=0,wB=0,best=0,thresh=128;
-      for(let t=0;t<256;t++){
-        wB+=hist[t];if(!wB)continue;const wF=N-wB;if(!wF)break;
-        sumB+=t*hist[t];const mB=sumB/wB,mF=(sumAll-sumB)/wF;
-        const b=wB*wF*(mB-mF)*(mB-mF);if(b>best){best=b;thresh=t;}
+      for(let t=0;t<256;t++){wB+=hist[t];if(!wB)continue;const wF=W*H-wB;if(!wF)break;sumB+=t*hist[t];const mB=sumB/wB,mF=(sumAll-sumB)/wF,b=wB*wF*(mB-mF)*(mB-mF);if(b>best){best=b;thresh=t;}}
+      const darkCnt=grey.filter(v=>v<=thresh).length;
+      const invert=darkCnt>(W*H)*0.55;
+      // Write clean black/white pixels
+      for(let i=0;i<W*H;i++){
+        const isDark=invert?(grey[i]>thresh):(grey[i]<=thresh);
+        px[i*4]=isDark?17:255;
+        px[i*4+1]=isDark?17:255;
+        px[i*4+2]=isDark?17:255;
+        px[i*4+3]=255;
       }
-      const darkCount=grey.filter(v=>v<=thresh).length;
-      const invert=darkCount>N*0.6;
-      const dark=new Uint8Array(WORK_W*WORK_H);
-      for(let i=0;i<grey.length;i++) dark[i]=invert?(grey[i]>thresh?1:0):(grey[i]<=thresh?1:0);
-      // Grid centre-of-mass sampling
-      const GRID=6; const centers=[];
-      for(let y=GRID;y<WORK_H-GRID;y+=GRID){
-        for(let x=GRID;x<WORK_W-GRID;x+=GRID){
-          let cnt=0,sx=0,sy=0;
-          for(let dy=-GRID;dy<=GRID;dy++) for(let dx=-GRID;dx<=GRID;dx++){
-            const nx=x+dx,ny=y+dy;
-            if(nx<0||nx>=WORK_W||ny<0||ny>=WORK_H)continue;
-            if(dark[ny*WORK_W+nx]){cnt++;sx+=nx;sy+=ny;}
-          }
-          if(cnt>GRID) centers.push({x:sx/cnt,y:sy/cnt});
-        }
+      TX.putImageData(id,0,0);
+      renderTrackToMain();
+      // Extract path
+      const ok=rebuildPath();
+      if(ok){
+        document.getElementById('tchip').textContent='IMG TRACK';
+        document.getElementById('ovl').classList.remove('gone');
+        sc.textContent=`✓ Done! Use Draw/Erase to fix any gaps, then Apply.`;
+        log(`Image processed (thresh=${thresh}${invert?', inverted':''})`,'ok');
+        toast('Track scanned! Edit with Draw/Erase if needed.','ok');
       }
-      if(centers.length<8){sc.textContent='❌ No line detected.';btn.disabled=false;btn.textContent='⬡ SCAN & BUILD TRACK';return;}
-      // Order via greedy nearest-neighbour + angle continuity
-      const used=new Uint8Array(centers.length);
-      let si=centers.reduce((a,_,i)=>centers[i].x+centers[i].y<centers[a].x+centers[a].y?i:a,0);
-      const ordered=[centers[si]];used[si]=1;
-      let cx=centers[si].x,cy2=centers[si].y,prevA=0;
-      const REACH=WORK_W*0.15;
-      for(let iter=0;iter<centers.length;iter++){
-        let bst=-1,bsc=-Infinity;
-        for(let i=0;i<centers.length;i++){
-          if(used[i])continue;
-          const dx=centers[i].x-cx,dy=centers[i].y-cy2;
-          const dist=Math.sqrt(dx*dx+dy*dy);
-          if(dist>REACH||dist<1)continue;
-          const ang=Math.atan2(dy,dx);
-          const score=Math.cos(ang-prevA)*2-dist/REACH;
-          if(score>bsc){bsc=score;bst=i;}
-        }
-        if(bst<0)break;
-        used[bst]=1;ordered.push(centers[bst]);
-        const dx=centers[bst].x-cx,dy=centers[bst].y-cy2;
-        prevA=Math.atan2(dy,dx);cx=centers[bst].x;cy2=centers[bst].y;
-      }
-      if(ordered.length<6){sc.textContent='❌ Path too short.';btn.disabled=false;btn.textContent='⬡ SCAN & BUILD TRACK';return;}
-      // Scale to canvas
-      let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
-      for(const p of ordered){if(p.x<minX)minX=p.x;if(p.y<minY)minY=p.y;if(p.x>maxX)maxX=p.x;if(p.y>maxY)maxY=p.y;}
-      const pad=44,sc2=Math.min((W-pad*2)/Math.max(1,maxX-minX),(H-pad*2)/Math.max(1,maxY-minY));
-      const oX=pad+((W-pad*2)-(maxX-minX)*sc2)/2,oY=pad+((H-pad*2)-(maxY-minY)*sc2)/2;
-      let pts=ordered.map(p=>({x:oX+(p.x-minX)*sc2,y:oY+(p.y-minY)*sc2}));
-      const smooth=(arr,r)=>arr.map((_,i)=>{let sx=0,sy=0,tw=0;for(let j=Math.max(0,i-r);j<=Math.min(arr.length-1,i+r);j++){const w=r+1-Math.abs(j-i);sx+=arr[j].x*w;sy+=arr[j].y*w;tw+=w;}return{x:sx/tw,y:sy/tw};});
-      pts=smooth(smooth(smooth(pts,3),3),3);
-      const dc=Math.hypot(pts[0].x-pts[pts.length-1].x,pts[0].y-pts[pts.length-1].y);
-      if(dc<W*0.3) pts.push({...pts[0]});
-      imgPath=pts;trackMode='img';customStartPt=null;
-      bake(imgPath);renderStamp();
-      document.getElementById('tchip').textContent='IMG TRACK';
-      document.getElementById('ovl').classList.remove('gone');
-      sc.textContent=`✓ ${pts.length} waypoints (thresh=${thresh}${invert?', inverted':''})`;
-      btn.disabled=false;btn.textContent='⬡ SCAN & BUILD TRACK';
-      log(`Image track: ${pts.length} pts`,'ok');
-      toast('Track built! Use Draw tool to fix any gaps.','ok');
-    } catch(e){
+    }catch(e){
       sc.textContent='❌ Error: '+e.message;
-      btn.disabled=false;btn.textContent='⬡ SCAN & BUILD TRACK';
     }
+    btn.disabled=false; btn.textContent='⬡ SCAN & BUILD TRACK';
   },30);
 }
 
 // ── C FILE ──
 document.getElementById('cfi').addEventListener('change',e=>{
   const f=e.target.files[0];if(!f)return;
+  new FileReader().onload=(ev=>applyCode(ev.target.result,f.name)),
+  document.getElementById('cfi').dispatchEvent;
   const rd=new FileReader();rd.onload=ev=>applyCode(ev.target.result,f.name);rd.readAsText(f);
 });
 const cdz=document.getElementById('cdz');
 cdz.addEventListener('dragover',e=>{e.preventDefault();cdz.classList.add('drag');});
 cdz.addEventListener('dragleave',()=>cdz.classList.remove('drag'));
-cdz.addEventListener('drop',e=>{
-  e.preventDefault();cdz.classList.remove('drag');
-  const f=e.dataTransfer.files[0];
-  if(f){const dt=new DataTransfer();dt.items.add(f);document.getElementById('cfi').files=dt.files;document.getElementById('cfi').dispatchEvent(new Event('change'));}
-});
+cdz.addEventListener('drop',e=>{e.preventDefault();cdz.classList.remove('drag');const f=e.dataTransfer.files[0];if(f){const dt=new DataTransfer();dt.items.add(f);document.getElementById('cfi').files=dt.files;document.getElementById('cfi').dispatchEvent(new Event('change'));}});
 
 function applyCode(code,name){
   const gv=(re,def)=>{const m=code.match(re);return m?parseFloat(m[1]):def;};
   const kp=gv(/\bKP\s+([\d.]+)/,1.2),ki=gv(/\bKI\s+([\d.]+)/,0),kd=gv(/\bKD\s+([\d.]+)/,0.8),bs=gv(/BASE_SPEED\s+([\d.]+)/,80);
-  [['rKp',kp,'vKp',2],['rKi',ki,'vKi',3],['rKd',kd,'vKd',2],['rBs',bs,'vBs',0]].forEach(([sl,v,dv,dp])=>{
-    document.getElementById(sl).value=v;document.getElementById(dv).textContent=parseFloat(v).toFixed(dp);
-  });
-  document.getElementById('cfn').textContent='▸ '+(name||'code.c');
-  document.getElementById('cfn').classList.add('on');
-  document.getElementById('cbox').textContent=code.substring(0,420)+(code.length>420?'\n...':'');
-  document.getElementById('cbox').classList.add('on');
+  [['rKp',kp,'vKp',2],['rKi',ki,'vKi',3],['rKd',kd,'vKd',2],['rBs',bs,'vBs',0]].forEach(([sl,v,dv,dp])=>{document.getElementById(sl).value=v;document.getElementById(dv).textContent=parseFloat(v).toFixed(dp);});
+  document.getElementById('cfn').textContent='▸ '+(name||'code.c');document.getElementById('cfn').classList.add('on');
+  document.getElementById('cbox').textContent=code.substring(0,420)+(code.length>420?'\n...':'');document.getElementById('cbox').classList.add('on');
   log(/compute_pid\s*\(/.test(code)?'compute_pid() found ✓':'WARNING: compute_pid() not found','wn');
   log(`Parsed → Kp:${kp} Ki:${ki} Kd:${kd} Base:${bs}`,'ac');
   toast((name||'Code')+' loaded','ok');
 }
-
 function loadDef(){applyCode(TMPLS[0],'default_pid.c');toast('Default PID loaded','in');}
 function sp(id,v,d){document.getElementById(id).textContent=parseFloat(v).toFixed(d);}
-
-// ── MODAL ──
 let ct=0;
 function showMod(){document.getElementById('tco').textContent=TMPLS[ct];document.getElementById('mbg').classList.add('on');}
 function hideMod(){document.getElementById('mbg').classList.remove('on');}
 function swTmpl(i,b){ct=i;document.querySelectorAll('.ttb').forEach(x=>x.classList.remove('on'));b.classList.add('on');document.getElementById('tco').textContent=TMPLS[i];}
 function cpyT(){navigator.clipboard.writeText(TMPLS[ct]).then(()=>toast('Copied!','ok'));}
+function log(msg,t='in'){const b=document.getElementById('lbox');const ts=simT.toFixed(2).padStart(6,'0');const d=document.createElement('div');d.className='ll';const cls={ok:'lok',wn:'lwn',er:'ler',in:'lin',ac:'lac'}[t]||'lin';d.innerHTML=`<span class="ts">[${ts}] </span><span class="${cls}">${msg}</span>`;b.appendChild(d);b.scrollTop=b.scrollHeight;if(b.children.length>120)b.removeChild(b.firstChild);}
+function toast(msg,t='in'){const el=document.getElementById('tst');el.textContent=msg;el.className=`tst on t${t}`;clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2800);}
 
-// ── LOG ──
-function log(msg,t='in'){
-  const b=document.getElementById('lbox');
-  const ts=simT.toFixed(2).padStart(6,'0');
-  const d=document.createElement('div');d.className='ll';
-  const cls={ok:'lok',wn:'lwn',er:'ler',in:'lin',ac:'lac'}[t]||'lin';
-  d.innerHTML=`<span class="ts">[${ts}] </span><span class="${cls}">${msg}</span>`;
-  b.appendChild(d);b.scrollTop=b.scrollHeight;
-  if(b.children.length>120) b.removeChild(b.firstChild);
-}
-
-// ── TOAST ──
-function toast(msg,t='in'){
-  const el=document.getElementById('tst');
-  el.textContent=msg;el.className=`tst on t${t}`;
-  clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('on'),2800);
-}
-
-// ── INIT ──
 window.addEventListener('load',()=>{
   allTracks=makeTracks();
-  bake(allTracks[0]);
-  renderStamp();
+  clearTrackCanvas();
+  paintPreset(allTracks[0]);
+  rebuildPath();
   drawErrGraph();
-  log('RoboTrace v6.0 ready','ac');
-  log('Click USE DEFAULT → ▶ RUN to start','in');
-  log('Use Draw tool to paint/edit the track','in');
+  log('RoboTrace v7.0 ready','ac');
+  log('USE DEFAULT → RUN to start immediately','in');
+  log('Draw/Erase edits the actual track the robot follows','in');
 });
 window.addEventListener('resize',drawErrGraph);
 </script>
